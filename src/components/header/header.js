@@ -28,6 +28,19 @@ export const createHeader = () => {
   body.prepend(header);
   searchBar(extras);
   toggler(extras);
+
+  const hamburgerButton = document.createElement('button');
+  hamburgerButton.classList.add('hamburger-button');
+  const img = document.createElement('img');
+  img.src = './public/assets/lista.png';
+  img.alt = 'Menu';
+  img.classList.add('menu-icon');
+  hamburgerButton.appendChild(img);
+  extras.append(hamburgerButton);
+
+  hamburgerButton.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
 };
 
 export const decorateLinks = () => {
