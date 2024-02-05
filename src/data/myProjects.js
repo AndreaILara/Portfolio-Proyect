@@ -63,7 +63,7 @@ export const myProjects = [
   {
     title: 'Games Hub',
     description:
-      'Stay tuned for an exciting new project coming soon!',
+      'Hangman, Tic-Tac-Toe, and Rock, Paper, Scissors constitute this set of games that I have created using my knowledge in JavaScript.',
     screenshot: '/assets/soon.jpg',
     technologies: ['html', 'css', 'js'],
     imgDescription: 'Cooming Soon',
