@@ -64,9 +64,9 @@ export const myProjects = [
     title: 'Games Hub',
     description:
       'Hangman, Tic-Tac-Toe, and Rock, Paper, Scissors constitute this set of games that I have created using my knowledge in JavaScript.',
-    screenshot: '/assets/soon.jpg',
+    screenshot: '/assets/games-hub.JPG',
     technologies: ['html', 'css', 'js'],
-    imgDescription: 'Cooming Soon',
+    imgDescription: 'GAMES',
     gitHubUrl: 'https://github.com/AndreaILara/Games-Hub',
     liveUrl: 'https://games-hub-andrea.netlify.app/'
   },
