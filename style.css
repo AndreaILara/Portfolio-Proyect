@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+  --primary-light: #faf9f6;
+  --primary-dark: #242424;
+  --highlighter-brown0:#EDE0D4;
+  --highlighter-brown1:#dac5b1;
+  --highlighter-brown2:#B08968;
+  --highlighter-brown3:#7F5539;
+
+  --spacing-xl: 50px;
+  --spacing-lg: 30px;
+  --spacing-md: 20px;
+  --spacing-sm: 10px;
+  --spacing-xs: 5px;
+
+  --radius-sm: 5px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+ 
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.3;
+  font-weight: 400;
+  font-size: 20px;
+}
+body::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url(/assets/background.png);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+p {
+  backdrop-filter: blur(2px);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.highlighter {
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.highlighter:after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.4;
+  transition: transform 0.8s, opacity 0.8s;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.brown1:after {
+  background: var(--highlighter-brown1);
+}
+
+.brown2:after {
+  background: var(--highlighter-brown2);
+}
+
+.brown3:after {
+  background: var(--highlighter-brown3);
+}
+
+.highlighter:hover:after,
+.highlighted:after {
+  transform: scaleY(1);
+  opacity: 0.8;
+}
+body.dark {
+  color: var(--primary-light);
+  background-color: var(--primary-dark);
+  z-index: -2;
+}
+
+body.dark a {
+  color: var(--primary-light);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-out {
+  animation: fadeIn 0.8s ease-in reverse;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+
+  body {
+    font-size: 16px; 
+  }
+
+  .highlighter:after {
+    transform-origin: top; 
+  }
+
+  .fade-out,
+  .fade-in {
+    animation: fadeIn 0.8s ease-in;
+  }
+}

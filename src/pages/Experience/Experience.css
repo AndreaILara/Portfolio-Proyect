@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+#experiencia {
+  padding: var(--spacing-md);
+}
+
+.experience-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.experience-card {
+  width: 500px;
+  max-width: 100%;
+  background-color: var(--highlighter-brown1);
+  color: var(--primary-dark);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(146, 115, 11, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.experience-card:hover {
+  transform: scale(1.05);
+}
+
+.experience-image {
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.experience-content {
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.experience-content h2 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 35px;
+  font-family: 'Caveat', cursive;
+}
+
+.experience-content p {
+  margin-bottom: var(--spacing-xs);
+  font-size: 18px;
+}
+
+.experience-card::before {
+  content: '';
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

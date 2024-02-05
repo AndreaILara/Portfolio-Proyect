@@ -1,0 +1,15 @@
+.search-info {
+  font-family: 'Open Sans', sans-serif;
+}
+
+section.search-results {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 var(--spacing-lg);
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+}
+
+section.search-results > article > a {
+  cursor: pointer;
+  color: rgb(34, 34, 39);
+}
