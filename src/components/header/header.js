@@ -32,7 +32,7 @@ export const createHeader = () => {
   const hamburgerButton = document.createElement('button');
   hamburgerButton.classList.add('hamburger-button');
   const img = document.createElement('img');
-  img.src = './public/assets/lista.png';
+  img.src = '/assets/lista.png';
   img.alt = 'Menu';
   img.classList.add('menu-icon');
   hamburgerButton.appendChild(img);
