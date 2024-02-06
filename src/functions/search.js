@@ -12,12 +12,11 @@ const searchEngine = (query) => {
       const projectValue = project[key];
       const isString = typeof projectValue === 'string';
 
-      const includesQuery =
-        isString
-          ? projectValue.toLowerCase().includes(query.toLowerCase())
-          : projectValue.includes(query.toLowerCase());
-
-      if (includesQuery) {
+      if (
+        (isString &&
+          projectValue.toLowerCase().includes(query.toLowerCase())) ||
+        (!isString && projectValue.includes(query.toLowerCase()))
+      ) {
         if (!searchResults.includes(project)) {
           project['section'] = section;
           searchResults.push(project);
@@ -32,25 +31,22 @@ const searchEngine = (query) => {
 
   return searchResults;
 };
-
 export const search = (e) => {
   const app = document.querySelector('#app');
-  const query = e.target.value.trim();
-  const searchResults = searchEngine(query);
+  const searchResults = searchEngine(e.target.value);
   const navItem = document.querySelector('header li.highlighted');
   navItem?.classList.remove('highlighted');
   const searchInfo = document.createElement('h3');
   searchInfo.classList.add('search-info');
   app.innerHTML = '';
-
   if (searchResults.length > 0) {
-    searchInfo.innerHTML = `Results for: <b>${query}</b>`;
+    searchInfo.innerHTML = `Results for: <b>${e.target.value}</b>`;
     console.log(searchResults);
     app.append(searchInfo, renderSearchResults(searchResults));
   } else {
-    searchInfo.innerHTML = `No results found for: <b>${query}</b>`;
+    searchInfo.innerHTML = `No results found for: <b>${e.target.value}</b>`;
     app.append(searchInfo);
   }
-
   e.target.value = '';
 };
+

@@ -1,7 +1,7 @@
 #search {
-  position: fixed;
-  top: 20px;
-  left: 0;
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
   height: 50px;
   overflow: hidden;
   cursor: pointer;
@@ -13,12 +13,12 @@
 }
 
 #search > img {
-  height: 30px; 
+  height: 90%;
   transform: scaleX(-1);
 }
 
 #search > input {
-  height: 80%;
+  height: 90%;
   border: none;
   border-radius: var(--radius-sm);
   width: 0px;
@@ -27,7 +27,7 @@
 
 #search > input.visible {
   padding: var(--spacing-xs);
-  width: 180px;
+  width: 150px;
   margin-left: var(--spacing-sm);
 }
 
@@ -37,9 +37,8 @@ h3.search-info {
   font-weight: 400;
 }
 
-
-#search > img {
-  display: block;
-  margin: auto;
-}
-
+@media screen and (max-width: 600px) {
+  #search {
+    position:absolute;
+    top: auto;
+  }}
