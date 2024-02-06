@@ -24,7 +24,7 @@
 }
 
 body.dark .project-image-container a {
-  color: var(--primary-dark);
+  color: var(--highlighter-brown3);
 }
 
 .project-image-container > div {
