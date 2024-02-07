@@ -24,7 +24,7 @@
 }
 
 body.dark .project-image-container a {
-  color: var(--highlighter-brown3);
+  color: var(--primary-light);
 }
 
 .project-image-container > div {
@@ -97,7 +97,7 @@ body.dark .project-image-container a {
 
 .overlay > span {
   font-size: 24px;
-  background-color: var(--primary-light);
+  background-color: var(--highlighter-brown1);
   padding: 15px;
   border-radius: 10px;
 }
